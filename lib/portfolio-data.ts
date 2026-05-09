@@ -136,9 +136,10 @@ export const skillCategories: SkillCategory[] = [
     description: "Core languages used across automation, systems, and product builds.",
     accent: "#67e8f9",
     skills: [
-      { name: "Python", level: 49 },
-      { name: "C Programming", level: 45 },
-      { name: "Dart (Basic)", level: 24 },
+      { name: "Python", level: 80 },
+      { name: "C Programming", level: 60 },
+      { name: "Dart (Basic)", level: 30 },
+      { name: "Kotlin (Basic)", level: 30 },
     ],
   },
   {
@@ -147,10 +148,10 @@ export const skillCategories: SkillCategory[] = [
     description: "Prototyping real-world hardware and microcontroller-based solutions.",
     accent: "#8b5cf6",
     skills: [
-      { name: "Arduino", level: 48 },
-      { name: "ESP32", level: 47 },
-      { name: "Sensor Interfacing", level: 44 },
-      { name: "Embedded Programming", level: 42 },
+      { name: "Arduino", level: 100 },
+      { name: "ESP32", level: 100 },
+      { name: "Sensor Interfacing", level: 100 },
+      { name: "Embedded Programming", level: 70 },
     ],
   },
   {
@@ -171,11 +172,11 @@ export const skillCategories: SkillCategory[] = [
     accent: "#a78bfa",
     skills: [
       { name: "Git", level: 43 },
-      { name: "GitHub", level: 44 },
-      { name: "Linux", level: 41 },
-      { name: "Android Studio", level: 38 },
-      { name: "VS Code", level: 49 },
-      { name: "MySQL", level: 32 },
+      { name: "GitHub", level: 70 },
+      { name: "Linux", level: 80 },
+      { name: "Android Studio", level: 70 },
+      { name: "VS Code", level: 100 },
+      { name: "MySQL", level: 70 },
     ],
   },
   {
@@ -184,9 +185,9 @@ export const skillCategories: SkillCategory[] = [
     description: "Visual storytelling that supports both products and presentations.",
     accent: "#22d3ee",
     skills: [
-      { name: "Video Editing", level: 40 },
-      { name: "Poster Design", level: 36 },
-      { name: "Photo Editing", level: 38 },
+      { name: "Video Editing", level: 80 },
+      { name: "Poster Design", level: 90 },
+      { name: "Photo Editing", level: 90 },
     ],
   },
 ];

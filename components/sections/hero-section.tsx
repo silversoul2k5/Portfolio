@@ -158,14 +158,15 @@ export function HeroSection() {
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(103,232,249,0.16),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.04),transparent)]" />
                   <div className="relative grid gap-6 sm:grid-cols-[1.05fr_0.95fr] sm:items-center">
                     <div className="space-y-4">
-                      <div className="overflow-hidden rounded-[26px] border border-white/10 bg-black/30 shadow-[0_18px_60px_rgba(2,6,23,0.45)]">
+                      <div className="relative aspect-[4/5] min-h-[20rem] overflow-hidden rounded-[26px] border border-white/10 bg-black/30 shadow-[0_18px_60px_rgba(2,6,23,0.45)]">
                         <Image
                           src="/images/profile-main.jpg"
                           alt="Arjun C profile"
-                          width={720}
-                          height={720}
+                          fill
                           priority
-                          className="h-full w-full object-cover"
+                          unoptimized
+                          sizes="(max-width: 640px) 80vw, (max-width: 1024px) 36vw, 320px"
+                          className="object-cover object-center"
                         />
                       </div>
                     </div>
