@@ -1,6 +1,7 @@
 "use client";
 
 import { CircuitBoard, Code2, Cpu, Sparkles } from "lucide-react";
+import Image from "next/image";
 
 import { aboutHighlights } from "@/lib/portfolio-data";
 
@@ -60,6 +61,33 @@ export function AboutSection() {
                     </div>
                     <div className="mt-4 font-display text-2xl font-semibold tracking-[-0.06em] text-white">
                       Android ROMs and system tuning
+                    </div>
+                  </div>
+                </div>
+
+                <div className="overflow-hidden rounded-[28px] border border-white/10 bg-black/28">
+                  <div className="grid gap-0 sm:grid-cols-[0.82fr_1.18fr]">
+                    <div className="relative min-h-72 overflow-hidden">
+                      <Image
+                        src="/images/profile-secondary.jpg"
+                        alt="Arjun C secondary profile portrait"
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
+                    </div>
+                    <div className="flex flex-col justify-center gap-4 p-6 sm:p-7">
+                      <p className="text-xs uppercase tracking-[0.28em] text-white/40">
+                        Personal edge
+                      </p>
+                      <h4 className="font-display text-2xl font-semibold tracking-[-0.06em] text-white sm:text-3xl">
+                        Discipline from training carries over into how I build.
+                      </h4>
+                      <p className="text-sm leading-7 text-white/56">
+                        The same consistency I bring to workouts shows up in how
+                        I iterate on hardware, polish interfaces, and push
+                        projects toward a cleaner final result.
+                      </p>
                     </div>
                   </div>
                 </div>

@@ -2,7 +2,14 @@
 
 import type { FormEvent } from "react";
 import { useState } from "react";
-import { ArrowUpRight, Camera, GitBranch, Mail, Send } from "lucide-react";
+import {
+  ArrowUpRight,
+  BriefcaseBusiness,
+  Camera,
+  GitBranch,
+  Mail,
+  Send,
+} from "lucide-react";
 
 import { socials } from "@/lib/portfolio-data";
 
@@ -13,6 +20,7 @@ import { Reveal } from "../ui/reveal";
 const socialIcons = {
   Email: Mail,
   GitHub: GitBranch,
+  LinkedIn: BriefcaseBusiness,
   Instagram: Camera,
 };
 

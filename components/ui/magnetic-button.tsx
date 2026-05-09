@@ -21,7 +21,7 @@ type MagneticButtonProps = {
 
 const variants = {
   primary:
-    "bg-white text-black shadow-[0_20px_80px_rgba(255,255,255,0.18)] hover:bg-white/92",
+    "border border-white/70 bg-[linear-gradient(135deg,#ffffff_0%,#dff7ff_100%)] text-slate-950 shadow-[0_20px_80px_rgba(255,255,255,0.18)] hover:brightness-[0.98]",
   secondary:
     "border border-white/12 bg-white/[0.05] text-white hover:border-white/24 hover:bg-white/[0.08]",
   ghost:
@@ -69,7 +69,7 @@ export function MagneticButton({
       style={{ x, y }}
       whileTap={{ scale: 0.97 }}
       className={cn(
-        "group relative inline-flex items-center justify-center overflow-hidden rounded-full px-6 py-3 text-sm font-medium tracking-[0.02em] transition-colors duration-300",
+        "group relative inline-flex min-h-[3.35rem] shrink-0 items-center justify-center overflow-hidden rounded-full px-6 py-3 text-sm font-medium tracking-[0.02em] transition-colors duration-300",
         variants[variant],
         className,
       )}
@@ -81,7 +81,14 @@ export function MagneticButton({
         <span className="absolute inset-x-[18%] top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent" />
         <span className="absolute inset-x-[20%] bottom-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
       </span>
-      <span className="relative z-10 inline-flex items-center gap-2">{children}</span>
+      <span
+        className={cn(
+          "relative z-10 inline-flex items-center gap-2 whitespace-nowrap",
+          variant === "primary" ? "text-slate-950" : "text-current",
+        )}
+      >
+        {children}
+      </span>
     </motion.a>
   );
 }

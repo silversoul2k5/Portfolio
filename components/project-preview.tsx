@@ -1,10 +1,17 @@
 import type { CSSProperties } from "react";
+import Image from "next/image";
 
-import type { ProjectPreviewKind } from "@/lib/portfolio-data";
+import type {
+  ProjectImage,
+  ProjectMediaLayout,
+  ProjectPreviewKind,
+} from "@/lib/portfolio-data";
 
 type ProjectPreviewProps = {
   title: string;
-  preview: ProjectPreviewKind;
+  preview?: ProjectPreviewKind;
+  images?: ProjectImage[];
+  mediaLayout?: ProjectMediaLayout;
   colors: {
     primary: string;
     secondary: string;
@@ -32,6 +39,104 @@ function line(width: string, opacity = 0.42, color = "rgba(255,255,255,0.18)") {
       className="block h-2 rounded-full"
       style={{ width, backgroundColor: color, opacity }}
     />
+  );
+}
+
+function imageFrame({
+  src,
+  alt,
+  contain = false,
+}: {
+  src: string;
+  alt: string;
+  contain?: boolean;
+}) {
+  return (
+    <div className="relative h-full overflow-hidden rounded-[24px] border border-white/10 bg-black/34 shadow-[0_16px_50px_rgba(2,6,23,0.34)]">
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),transparent_24%,transparent_76%,rgba(255,255,255,0.04))]" />
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className={contain ? "object-contain p-3" : "object-cover"}
+        sizes="(max-width: 768px) 80vw, 480px"
+      />
+    </div>
+  );
+}
+
+function imageShowcase(
+  layout: ProjectMediaLayout,
+  images: ProjectImage[],
+  colors: ProjectPreviewProps["colors"],
+) {
+  if (layout === "mobile-pair") {
+    return (
+      <div className="grid h-full gap-4 md:grid-cols-2">
+        {images.slice(0, 2).map((image, index) => (
+          <div
+            key={image.src}
+            className="relative overflow-hidden rounded-[24px] border border-white/10 bg-black/35 p-3"
+          >
+            <div
+              className="absolute inset-0 opacity-40"
+              style={{
+                background:
+                  index === 0
+                    ? `radial-gradient(circle at top, ${colors.primary}28, transparent 48%)`
+                    : `radial-gradient(circle at top, ${colors.secondary}26, transparent 48%)`,
+              }}
+            />
+            {imageFrame({ ...image, contain: true })}
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  if (layout === "stacked") {
+    return (
+      <div className="grid h-full gap-4 grid-rows-[1.15fr_0.85fr]">
+        {imageFrame({
+          src: images[0]?.src ?? "",
+          alt: images[0]?.alt ?? "",
+        })}
+        <div className="grid grid-cols-2 gap-4">
+          {images.slice(1, 3).map((image) => (
+            <div key={image.src} className="relative">
+              {imageFrame(image)}
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="grid h-full gap-4 lg:grid-cols-[0.72fr_1.28fr]">
+      <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-black/35 p-3">
+        <div
+          className="absolute inset-0 opacity-42"
+          style={{
+            background: `radial-gradient(circle at top, ${colors.primary}2e, transparent 44%)`,
+          }}
+        />
+        {imageFrame({
+          src: images[0]?.src ?? "",
+          alt: images[0]?.alt ?? "",
+          contain: true,
+        })}
+      </div>
+      <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-black/35 p-3">
+        {imageFrame({
+          src: images[1]?.src ?? images[0]?.src ?? "",
+          alt: images[1]?.alt ?? images[0]?.alt ?? "",
+        })}
+        <div className="absolute inset-x-6 bottom-6 rounded-full border border-white/10 bg-black/45 px-4 py-3 text-[10px] uppercase tracking-[0.26em] text-white/60 backdrop-blur-xl">
+          Live hardware + mobile monitoring
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -249,7 +354,7 @@ function previewBody(
               </div>
             </div>
             <div className="space-y-3 rounded-[22px] border border-white/10 bg-white/[0.04] p-4">
-              {[82, 60, 72, 48].map((width, index) => (
+              {[48, 39, 44, 27].map((width, index) => (
                 <div key={width} className="space-y-2">
                   <div className="flex items-center justify-between text-xs uppercase tracking-[0.22em] text-white/42">
                     <span>Signal {index + 1}</span>
@@ -398,6 +503,8 @@ function previewBody(
 export function ProjectPreview({
   title,
   preview,
+  images,
+  mediaLayout,
   colors,
 }: ProjectPreviewProps) {
   const backgroundStyle: CSSProperties = {
@@ -425,7 +532,13 @@ export function ProjectPreview({
           {title}
         </span>
       </div>
-      <div className="relative mt-5 h-[calc(100%-4.4rem)]">{previewBody(preview, colors)}</div>
+      <div className="relative mt-5 h-[calc(100%-4.4rem)]">
+        {images && mediaLayout
+          ? imageShowcase(mediaLayout, images, colors)
+          : preview
+            ? previewBody(preview, colors)
+            : null}
+      </div>
     </div>
   );
 }

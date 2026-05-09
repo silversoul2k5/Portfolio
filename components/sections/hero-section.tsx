@@ -11,8 +11,8 @@ import { Reveal, Stagger, StaggerItem } from "../ui/reveal";
 
 const floatingBadges = [
   { label: "Embedded Systems", className: "left-0 top-12" },
-  { label: "Comic Frame", className: "right-4 top-0" },
-  { label: "AI Builds", className: "right-0 bottom-28" },
+  { label: "8Bit Framework", className: "right-4 top-0" },
+  { label: "System Tuning", className: "right-0 bottom-28" },
   { label: "ROM Experiments", className: "left-6 bottom-8" },
 ];
 
@@ -73,7 +73,10 @@ export function HeroSection() {
               </StaggerItem>
               <StaggerItem>
                 <div className="flex flex-col gap-4 sm:flex-row">
-                  <MagneticButton href="#projects" className="min-w-[11rem]">
+                  <MagneticButton
+                    href="#projects"
+                    className="min-w-[11.5rem] shadow-[0_24px_70px_rgba(255,255,255,0.12)]"
+                  >
                     View Projects
                     <ArrowRight className="h-4 w-4" />
                   </MagneticButton>
@@ -157,7 +160,7 @@ export function HeroSection() {
                     <div className="space-y-4">
                       <div className="overflow-hidden rounded-[26px] border border-white/10 bg-black/30 shadow-[0_18px_60px_rgba(2,6,23,0.45)]">
                         <Image
-                          src="https://avatars.githubusercontent.com/u/118655661?v=4"
+                          src="/images/profile-main.jpg"
                           alt="Arjun C profile"
                           width={720}
                           height={720}
@@ -176,7 +179,7 @@ export function HeroSection() {
                         </p>
                       </div>
                       <div className="grid grid-cols-2 gap-3">
-                        {["ESP32", "Arduino", "AI", "Next.js"].map((item, index) => (
+                        {["ESP32", "Arduino", "C++", "Next.js"].map((item, index) => (
                           <div
                             key={item}
                             className="rounded-[18px] border border-white/10 bg-white/[0.04] px-4 py-3 text-center text-xs uppercase tracking-[0.24em] text-white/56"

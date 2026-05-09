@@ -27,7 +27,7 @@ export function ProjectsSection() {
             Scroll horizontally to browse
           </p>
           <div className="hidden rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-xs uppercase tracking-[0.24em] text-white/46 sm:block">
-            Featured builds from web, AI, automation, and embedded experiments
+            Featured builds from web, embedded systems, mobile concepts, and automation
           </div>
         </div>
 
@@ -53,6 +53,8 @@ export function ProjectsSection() {
                   <ProjectPreview
                     title={project.title}
                     preview={project.preview}
+                    images={project.images}
+                    mediaLayout={project.mediaLayout}
                     colors={project.colors}
                   />
                 </div>
