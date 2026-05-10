@@ -194,21 +194,6 @@ export const skillCategories: SkillCategory[] = [
 
 export const projects: Project[] = [
   {
-    title: "8Bit Framework",
-    description:
-      "Premium website system and indie build identity focused on cinematic UI, fast interactions, and polished presentation.",
-    tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    githubUrl: "https://github.com/silversoul2k5/8bit-framework",
-    liveUrl: "https://8bit-framework.vercel.app",
-    preview: "web",
-    status: "Indie studio build",
-    colors: {
-      primary: "#67e8f9",
-      secondary: "#3b82f6",
-      tertiary: "#a855f7",
-    },
-  },
-  {
     title: "Smart Parking AI",
     description:
       "ESP32-connected parking lot prototype with live slot updates, mobile monitoring, and a guided mini-map experience.",
@@ -329,6 +314,21 @@ export const projects: Project[] = [
       primary: "#a78bfa",
       secondary: "#38bdf8",
       tertiary: "#14b8a6",
+    },
+  },
+  {
+    title: "8Bit Framework",
+    description:
+      "Premium website system and indie build identity focused on cinematic UI, fast interactions, and polished presentation.",
+    tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    githubUrl: "https://github.com/silversoul2k5/8bit-framework",
+    liveUrl: "https://8bit-framework.vercel.app",
+    preview: "web",
+    status: "Indie studio build",
+    colors: {
+      primary: "#67e8f9",
+      secondary: "#3b82f6",
+      tertiary: "#a855f7",
     },
   },
 ];

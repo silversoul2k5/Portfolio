@@ -2,7 +2,6 @@ import { AmbientParticles } from "@/components/ambient-particles";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { AboutSection } from "@/components/sections/about-section";
-import { AchievementsSection } from "@/components/sections/achievements-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { JourneySection } from "@/components/sections/journey-section";
@@ -32,8 +31,6 @@ export function PortfolioPage() {
         <ProjectsSection />
         {/* Journey Section */}
         <JourneySection />
-        {/* Achievements Section */}
-        <AchievementsSection />
         {/* Contact Section */}
         <ContactSection />
       </main>
