@@ -98,6 +98,7 @@ textarea {
   position: relative;
   padding-top: 7rem;
   padding-bottom: 7rem;
+  scroll-margin-top: 6.75rem;
 }
 
 .section-shell::before {
@@ -240,6 +241,12 @@ textarea:-webkit-autofill:focus {
   .section-shell {
     padding-top: 5.5rem;
     padding-bottom: 5.5rem;
+    scroll-margin-top: 5.75rem;
+  }
+
+  .project-rail {
+    margin-inline: -0.25rem;
+    padding-inline: 0.25rem;
   }
 }
 
