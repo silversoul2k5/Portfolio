@@ -198,6 +198,42 @@ export const skillCategories: SkillCategory[] = [
 
 export const projects: Project[] = [
   {
+    title: "ATEC 2026 Simulation Challenge",
+    description:
+      "Autonomous Isaac Sim pick-and-place system using a synthetic-data YOLOv11 pipeline for detection, planning, and robotic grasping.",
+    tech: [
+      "NVIDIA Isaac Sim",
+      "Isaac Lab",
+      "Python",
+      "YOLOv11",
+      "PyTorch",
+      "OpenCV",
+      "Domain Randomization",
+    ],
+    githubUrl: "https://github.com/silversoul2k5/ATEC2026-1",
+    images: [
+      {
+        src: "/images/robo_arm.png",
+        alt: "Simulated robotic arm placing a banana into a basket",
+      },
+      {
+        src: "/images/results.png",
+        alt: "YOLOv11 training metrics from the synthetic dataset pipeline",
+      },
+      {
+        src: "/images/yolo_detection.png",
+        alt: "YOLO object detection output for the ATEC 2026 challenge setup",
+      },
+    ],
+    mediaLayout: "stacked",
+    status: "Autonomous robotics simulation",
+    colors: {
+      primary: "#fde047",
+      secondary: "#38bdf8",
+      tertiary: "#f472b6",
+    },
+  },
+  {
     title: "Smart Parking AI",
     description:
       "ESP32-connected parking lot prototype with live slot updates, mobile monitoring, and a guided mini-map experience.",
@@ -273,42 +309,6 @@ export const projects: Project[] = [
       primary: "#fde047",
       secondary: "#84cc16",
       tertiary: "#f97316",
-    },
-  },
-  {
-    title: "ATEC 2026 Simulation Challenge",
-    description:
-      "Autonomous Isaac Sim pick-and-place system using a synthetic-data YOLOv11 pipeline for detection, planning, and robotic grasping.",
-    tech: [
-      "NVIDIA Isaac Sim",
-      "Isaac Lab",
-      "Python",
-      "YOLOv11",
-      "PyTorch",
-      "OpenCV",
-      "Domain Randomization",
-    ],
-    githubUrl: "https://github.com/silversoul2k5/ATEC2026-1",
-    images: [
-      {
-        src: "/images/robo_arm.png",
-        alt: "Simulated robotic arm placing a banana into a basket",
-      },
-      {
-        src: "/images/results.png",
-        alt: "YOLOv11 training metrics from the synthetic dataset pipeline",
-      },
-      {
-        src: "/images/yolo_detection.jfif",
-        alt: "YOLO object detection output for the ATEC 2026 challenge setup",
-      },
-    ],
-    mediaLayout: "stacked",
-    status: "Autonomous robotics simulation",
-    colors: {
-      primary: "#fde047",
-      secondary: "#38bdf8",
-      tertiary: "#f472b6",
     },
   },
   {
