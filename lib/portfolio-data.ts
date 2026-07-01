@@ -37,7 +37,11 @@ export type ProjectPreviewKind =
   | "crypto"
   | "utility";
 
-export type ProjectMediaLayout = "app-with-photo" | "mobile-pair" | "stacked";
+export type ProjectMediaLayout =
+  | "app-with-photo"
+  | "mobile-pair"
+  | "stacked"
+  | "single-cover";
 
 export type ProjectImage = {
   src: string;
@@ -92,7 +96,7 @@ export const navItems: NavItem[] = [
 
 export const heroStats: HeroStat[] = [
   {
-    value: "07",
+    value: "05",
     label: "Featured builds",
     detail: "Web, embedded systems, AI, and automation work.",
   },
@@ -272,17 +276,38 @@ export const projects: Project[] = [
     },
   },
   {
-    title: "Yolov11-Face-Emotion-Detection",
+    title: "ATEC 2026 Simulation Challenge",
     description:
-      "Emotion detection system using YOLO and computer vision models.",
-    tech: ["Python", "YOLO", "OpenCV"],
-    githubUrl:
-      "https://github.com/search?q=Yolov11-Face-Emotion-Detection+user%3Asilversoul2k5&type=repositories",
-    preview: "emotion",
-    status: "Computer vision study",
+      "Autonomous Isaac Sim pick-and-place system using a synthetic-data YOLOv11 pipeline for detection, planning, and robotic grasping.",
+    tech: [
+      "NVIDIA Isaac Sim",
+      "Isaac Lab",
+      "Python",
+      "YOLOv11",
+      "PyTorch",
+      "OpenCV",
+      "Domain Randomization",
+    ],
+    githubUrl: "https://github.com/silversoul2k5/ATEC2026-1",
+    images: [
+      {
+        src: "/images/robo_arm.png",
+        alt: "Simulated robotic arm placing a banana into a basket",
+      },
+      {
+        src: "/images/results.png",
+        alt: "YOLOv11 training metrics from the synthetic dataset pipeline",
+      },
+      {
+        src: "/images/yolo_detection.jfif",
+        alt: "YOLO object detection output for the ATEC 2026 challenge setup",
+      },
+    ],
+    mediaLayout: "stacked",
+    status: "Autonomous robotics simulation",
     colors: {
-      primary: "#38bdf8",
-      secondary: "#818cf8",
+      primary: "#fde047",
+      secondary: "#38bdf8",
       tertiary: "#f472b6",
     },
   },
@@ -293,42 +318,18 @@ export const projects: Project[] = [
     tech: ["JavaScript", "Chart.js"],
     githubUrl: "https://github.com/silversoul2k5/BitCharts-Pro",
     liveUrl: "https://bitcharts-pro.vercel.app",
-    preview: "crypto",
+    images: [
+      {
+        src: "/images/bit_charts.png",
+        alt: "BitCharts dashboard cover image",
+      },
+    ],
+    mediaLayout: "single-cover",
     status: "Data experience",
     colors: {
       primary: "#22d3ee",
       secondary: "#38bdf8",
       tertiary: "#f59e0b",
-    },
-  },
-  {
-    title: "Auto Clicker",
-    description:
-      "Automation utility tool for simulating automated click interactions.",
-    tech: ["Python"],
-    githubUrl:
-      "https://github.com/search?q=auto+clicker+user%3Asilversoul2k5&type=repositories",
-    preview: "utility",
-    status: "Automation tool",
-    colors: {
-      primary: "#a78bfa",
-      secondary: "#38bdf8",
-      tertiary: "#14b8a6",
-    },
-  },
-  {
-    title: "8Bit Framework",
-    description:
-      "Premium website system and indie build identity focused on cinematic UI, fast interactions, and polished presentation.",
-    tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    githubUrl: "https://github.com/silversoul2k5/8bit-framework",
-    liveUrl: "https://8bit-framework.vercel.app",
-    preview: "web",
-    status: "Indie studio build",
-    colors: {
-      primary: "#67e8f9",
-      secondary: "#3b82f6",
-      tertiary: "#a855f7",
     },
   },
 ];

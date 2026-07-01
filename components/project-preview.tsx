@@ -70,6 +70,23 @@ function imageShowcase(
   images: ProjectImage[],
   colors: ProjectPreviewProps["colors"],
 ) {
+  if (layout === "single-cover") {
+    return (
+      <div className="relative h-full overflow-hidden rounded-[24px] border border-white/10 bg-black/35 p-3">
+        <div
+          className="absolute inset-0 opacity-42"
+          style={{
+            background: `radial-gradient(circle at top, ${colors.primary}24, transparent 46%)`,
+          }}
+        />
+        {imageFrame({
+          src: images[0]?.src ?? "",
+          alt: images[0]?.alt ?? "",
+        })}
+      </div>
+    );
+  }
+
   if (layout === "mobile-pair") {
     return (
       <div className="grid h-full gap-4 md:grid-cols-2">
